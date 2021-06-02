@@ -1,54 +1,30 @@
 <script>
-	import Header from './component/Header.svelte';
-	import Footer from './component/Footer.svelte';
-	import Form from './component/Form.svelte';
-	
-
-	let todos = [
-		{title: 'Shop', description: 'Buy some milk', id:0},
-		{title: 'Work', description: 'Write some codes', id:1},
-	]
-
-	const addTodo = (e) => {
-		 const todo = e.detail;
-		 todos = [todo, ...todos];
-	}
+	export let name;
 </script>
 
-<Header />
 <main>
-	<Form on:addTodo={addTodo}/>
-
-	{#each todos as todo (todo.id)}
-		<div class='left'>
-			<h2>{todo.title}</h2> 
-	<input type='checkbox'>
-	
-	<input type='text' placeholder={todo.description}>
-		</div>
-	{/each}	
+	<h1>Hello {name}!</h1>
+	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
-<Footer />
-
 
 <style>
-	.left {
-		border: 1px solid white;
-		border-radius: 5px;
-		text-align: left;
-		padding: 8px;
-		margin-top: 20px;
+	main {
+		text-align: center;
+		padding: 1em;
+		max-width: 240px;
+		margin: 0 auto;
 	}
 
-	
-	main {
-		display:flex;
-		flex-direction: column;
-		align-items: flex-start;
-		text-align: center;
-		padding: 10px;
-		max-width: 900px;
-		margin: 40px auto;
+	h1 {
+		color: #ff3e00;
+		text-transform: uppercase;
+		font-size: 4em;
+		font-weight: 100;
 	}
-	
+
+	@media (min-width: 640px) {
+		main {
+			max-width: none;
+		}
+	}
 </style>
