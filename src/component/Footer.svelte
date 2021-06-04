@@ -1,6 +1,6 @@
 
 <footer>
-    <div class='copyright'>Copyright 2021 Zeyneb Koç</div>
+    <div class='copyright'>© 2021 Zeyneb Koç</div>
 </footer>
 
 <style>

@@ -25,10 +25,31 @@
 <style>
     form {
         border: 1px solid white;
-        border-radius: 5px;
+        border-radius: 8px;
 		text-align: center;
 		padding: 10px;
-		max-width: 900px;
-		margin: 40px auto;
-    }   
+		max-width: 600px;
+		margin: 50px auto;
+        background-color: #b9abae;
+    } 
+    input[type="text"] { 
+		overflow: hidden;
+	}
+	input:hover {
+		opacity: 0.8;
+		border-radius: 10px;
+		box-shadow: 0 2px #838383ab;
+	} 
+    button {
+		background-color: #527b88;
+		width: 110px;
+		height: 50px;
+		margin: 10px ;
+		padding: 10px;
+	}
+	button:hover {
+		opacity: 0.8;
+		border-radius: 10px;
+		box-shadow: 0 2px #85363dab;
+	} 
 </style>
