@@ -15,6 +15,11 @@
 	}
 
 	let yes = false;
+
+	const deleteItem = (id) => {
+		todos = todos.filter ((todo) => todo.id != id)
+	}
+
 	
 </script>
 
@@ -28,6 +33,7 @@
 	<input type='checkbox' bind:checked={yes}>
 	
 	<input type='text' placeholder={todo.description}>
+	<button on:click={() => deleteItem(todo.id)}>Delete</button>
 		</div>
 	{/each}	
 </main>
