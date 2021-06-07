@@ -12,7 +12,7 @@
 		color: #313131;
 		font-size: 16px;
 		font-weight: 100;
-        border-top: 1px solid #ddd;
+        border-top: 1px solid white;
         padding: 5px;
 	}
 	

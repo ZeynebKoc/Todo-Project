@@ -22,6 +22,8 @@
     <button>Add To Do</button>
 </form>
 
+
+
 <style>
     form {
         border: 1px solid white;
@@ -50,6 +52,6 @@
 	button:hover {
 		opacity: 0.8;
 		border-radius: 10px;
-		box-shadow: 0 2px #85363dab;
+		box-shadow: 0 2px #2a3f46;
 	} 
 </style>
