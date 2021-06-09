@@ -16,13 +16,12 @@
     };
 </script>
 
-<form on:submit|preventDefault={handleSubmit}>
-    <input type='text' placeholder='Title' bind:value={title}>
-    <input type='text' placeholder='What needs to be done?' bind:value={description}>
-    <button>Add To Do</button>
+
+<form on:submit|preventDefault={handleSubmit} >
+    <input type='text' placeholder='Title' bind:value={title} >
+    <input type='text' placeholder='What needs to be done?' bind:value={description} >
+    <button>Add To Do</button> 
 </form>
-
-
 
 <style>
     form {

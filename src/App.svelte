@@ -20,15 +20,17 @@
 </script>
 
 <Header />
-<Form on:addTodo={addTodo}/>
+{#key todos}
+	<Form on:addTodo={addTodo}/>
+{/key}
 <main>
 	<form>
 		{#each todos.filter(t => !t.done) as todo (todo.id)}
 			<label class='board'>
 				<input type=checkbox >
-				<h3>{todo.title}</h3>
+				<h3 contenteditable="true">{todo.title}</h3>
 				<input type='text' contenteditable="true" placeholder={todo.description}>
-				<button on:click={() => deleteItem(todo.id)}>Delete</button>
+				<button on:click|once={() => deleteItem(todo.id)}>Delete</button>
 			</label>
 		{/each}	
 	</form>	
@@ -50,7 +52,7 @@
 		padding: 8px;
 		margin: 20px;
 		max-height: 50px;
-		max-width: 700px;
+		min-width: 700px;
 		padding: 10px;	
 	}
 	button {
@@ -73,11 +75,13 @@
 		padding: 10px;
 		display: flex;
 		align-items: center;
+		min-width: 50px;
 	}
 	input[type="text"] { 
 		overflow: hidden;
 		display:flex;
 		align-self: center;
+		min-width: 500px;
 	}
 	input:hover {
 		opacity: 0.8;
@@ -88,6 +92,7 @@
 		width: 25px ;
 		height: 25px ;
 		background:url(check_radio_sheet.png) left top no-repeat;
+		margin: 12px;
 	}
 	
 </style>
