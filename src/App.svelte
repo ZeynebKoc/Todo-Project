@@ -3,6 +3,8 @@
 	import Footer from './component/Footer.svelte';
 	import Form from './component/Form.svelte';
 
+	
+
 	let todos = [
 		{title: 'Shop', description: 'Buy some milk', done: false, id:0},
 		{title: 'Work', description: 'Write some codes', done: false, id:1},
@@ -17,6 +19,7 @@
 	const deleteItem = (id) => {
 		todos = todos.filter ((todo) => todo.id != id)
 	};	
+
 </script>
 
 <Header />
@@ -24,22 +27,22 @@
 	<Form on:addTodo={addTodo}/>
 {/key}
 <main>
-	<form>
+	<div class='form'>
 		{#each todos.filter(t => !t.done) as todo (todo.id)}
 			<label class='board'>
 				<input type=checkbox >
-				<h3 contenteditable="true">{todo.title}</h3>
-				<input type='text' contenteditable="true" placeholder={todo.description}>
-				<button on:click|once={() => deleteItem(todo.id)}>Delete</button>
+				<input id='plh1' type='text' contenteditable="true" placeholder={todo.title}>
+				<input id='plh2' type='text' contenteditable="true" placeholder={todo.description}>
+				<button on:click={() => deleteItem(todo.id)}>Delete</button>	
 			</label>
 		{/each}	
-	</form>	
+	</div>
 </main>
 <Footer />
 
 
 <style>
-	form {
+	.form {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -51,8 +54,8 @@
 		border-radius: 8px;
 		padding: 8px;
 		margin: 20px;
-		max-height: 50px;
-		min-width: 700px;
+		height: 50px;
+		width: 800px;
 		padding: 10px;	
 	}
 	button {
@@ -70,18 +73,21 @@
 		border-radius: 10px;
 		box-shadow: 0 2px #2a3f46;
 	}
-	h3 {
-		color: #225564;
-		padding: 10px;
+	#plh1 {
+		overflow: hidden;
 		display: flex;
 		align-items: center;
-		min-width: 50px;
+		width: 150px;
+		margin: 5px;
+        font-weight: bolder;
+		font-size: large;
 	}
-	input[type="text"] { 
+	#plh2 { 
 		overflow: hidden;
 		display:flex;
 		align-self: center;
-		min-width: 500px;
+		width: 500px;
+		margin: 5px;
 	}
 	input:hover {
 		opacity: 0.8;

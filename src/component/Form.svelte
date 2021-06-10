@@ -18,8 +18,8 @@
 
 
 <form on:submit|preventDefault={handleSubmit} >
-    <input type='text' placeholder='Title' bind:value={title} >
-    <input type='text' placeholder='What needs to be done?' bind:value={description} >
+    <input class='plh1' type='text' placeholder='Title' bind:value={title} >
+    <input class='plh2' type='text' placeholder='What needs to be done?' bind:value={description} >
     <button>Add To Do</button> 
 </form>
 
@@ -29,12 +29,22 @@
         border-radius: 8px;
 		text-align: center;
 		padding: 10px;
-		max-width: 600px;
-		margin: 50px auto;
+		width: 650px;
+		margin: 30px auto;
         background-color: #b9abae;
     } 
-    input[type="text"] { 
+    .plh1 { 
 		overflow: hidden;
+        width: 120px;
+		margin: 5px;
+        font-weight: bolder;
+		font-size: large;
+		height: 40px ;
+	}
+    .plh2 { 
+		overflow: hidden;
+        width: 350px;
+		margin: 5px;
 	}
 	input:hover {
 		opacity: 0.8;
@@ -43,10 +53,10 @@
 	} 
     button {
 		background-color: #527b88;
-		width: 110px;
-		height: 50px;
+		width: 120px;
+		height: 60px;
 		margin: 10px ;
-		padding: 10px;
+		padding: 5px;
 	}
 	button:hover {
 		opacity: 0.8;

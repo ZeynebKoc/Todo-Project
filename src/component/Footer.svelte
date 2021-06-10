@@ -5,7 +5,7 @@
 
 <style>
     footer {
-        padding-bottom: 40px;
+        margin-bottom: 50px;
         text-align: center;
     }
     .copyright {
@@ -13,7 +13,7 @@
 		font-size: 16px;
 		font-weight: 100;
         border-top: 1px solid white;
-        padding: 5px;
+        padding: 10px;
 	}
 	
 </style>
