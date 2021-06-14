@@ -1,4 +1,6 @@
 <script>
+	import { _todos } from '../stores/store';
+
     import { createEventDispatcher } from 'svelte';
 
     let dispatch = createEventDispatcher();

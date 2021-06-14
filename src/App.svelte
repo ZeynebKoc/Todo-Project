@@ -1,15 +1,15 @@
 <script>
+	import { _todos } from './stores/store';
+
+	let todos;
+
+	_todos.subscribe((data) => {
+		todos = data;
+	});
+
 	import Header from './component/Header.svelte';
 	import Footer from './component/Footer.svelte';
 	import Form from './component/Form.svelte';
-
-	
-
-	let todos = [
-		{title: 'Shop', description: 'Buy some milk', done: false, id:0},
-		{title: 'Work', description: 'Write some codes', done: false, id:1},
-		{title: 'Fix', description: 'Feed the turtle', done: true, id:3},
-	];
 
 	const addTodo = (e) => {
 		 const todo = e.detail;
@@ -31,8 +31,8 @@
 		{#each todos.filter(t => !t.done) as todo (todo.id)}
 			<label class='board'>
 				<input type=checkbox >
-				<input id='plh1' type='text' contenteditable="true" placeholder={todo.title}>
-				<input id='plh2' type='text' contenteditable="true" placeholder={todo.description}>
+				<input id='plh1' type='text' contenteditable="true" placeholder={todo.title} autoComplete="off">
+				<input id='plh2' type='text' contenteditable="true" placeholder={todo.description} autoComplete="off">
 				<button on:click={() => deleteItem(todo.id)}>Delete</button>	
 			</label>
 		{/each}	
