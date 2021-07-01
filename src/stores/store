@@ -1,8 +1,0 @@
-import { writable } from 'svelte/store';
-
-export const _todos = writable([
-    {title: 'Shop', description: 'Buy some milk', done: false, id:0},
-    {title: 'Work', description: 'Write some codes', done: false, id:1},
-    {title: 'Fix', description: 'Feed the turtle', done: true, id:3},
-]);
-
