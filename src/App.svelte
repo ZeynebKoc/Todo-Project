@@ -27,20 +27,6 @@
 		 updateStorage();
 	};
 
-
-	
-
-	/*  const checked = (todo) => {
-		todos = todos.map(t => { 
-			 if(t.id == todo.id) {
-				 return todo;
-			 }
-			return t;
-		updateStorage();
-	};  */
-
-
-
 	const addTodo = (e) => {
 		 const todo = e.detail;
 		 todos = [todo, ...todos];
